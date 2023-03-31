@@ -34,16 +34,14 @@ function sumArray(arr) {
 
 
 function reverseString(str) {
-    //The split() method takes a pattern and divides a String into an ordered list of substrings by searching for the pattern, puts these substrings into an array, and returns the array.
-    const arr = str.split('');
-
-    arr.reverse();
-    //The join method combines the elements of an array and returns a string
-    return arr.join('');
+  if (str.length === 0) {
+    return '';
+  } else if (str.length === 1) {
+    return str;
+  } else {
+    return reverseString(str.slice(1)) + str[0];
   }
-  
- 
-const String = 'dlrow olleh';
-console.log(reverseString(String));
-  
+}
+
+console.log(reverseString(" hello"));
   
