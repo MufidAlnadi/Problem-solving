@@ -1,41 +1,37 @@
 //q1
 function fibonacci(num) {
-    if (num <= 0) {
-      return [];
-    } else if (num === 1) {
-      return [0];
-    } else if (num === 2) {
-      return [0, 1];
-    } else {
-      let series = fibonacci(num - 1);
-      series.push(series[series.length - 1] + series[series.length - 2]);
-      return series;
-    }
+  if (num <= 0) {
+    return [];
+  } else if (num === 1) {
+    return [0];
+  } else if (num === 2) {
+    return [0, 1];
+  } else {
+    let series = fibonacci(num - 1);
+    series.push(series[series.length - 1] + series[series.length - 2]);
+    return series;
   }
-  
-  console.log(fibonacci(11));
+}
 
-
+console.log(fibonacci(11));
 
 //q2
 const myArray = [1, 2, 3, 4, 5];
-console.log(sumArray(myArray)); 
+console.log(sumArray(myArray));
 
 function sumArray(arr) {
   if (arr.length === 0) {
-    return 0; 
+    return 0;
   } else {
-    
-    return arr[0] + sumArray(arr.slice(1)); 
+    return arr[0] + sumArray(arr.slice(1));
   }
 }
 
 //q3
 
-
 function reverseString(str) {
   if (str.length === 0) {
-    return '';
+    return "";
   } else if (str.length === 1) {
     return str;
   } else {
@@ -44,4 +40,35 @@ function reverseString(str) {
 }
 
 console.log(reverseString(" hello"));
-  
+
+//Stack and Queue
+//q1
+class MyStack {
+  constructor() {
+    this.stack = [];
+    this.minStack = [];
+  }
+  push(val) {
+    this.stack.push(val);
+    if (
+      this.minStack.length === 0 ||
+      val <= this.minStack[this.minStack.length - 1]
+    ) {
+      this.minStack.push(val);
+    }
+  }
+  getMin() {
+    if (this.minStack.length === 0) {
+      throw new Error("Stack is empty");
+    }
+    return this.minStack[this.minStack.length - 1];
+  }
+}
+
+const minStack = new MyStack();
+minStack.push(5);
+minStack.push(1);
+minStack.push(3);
+minStack.push(2);
+console.log(minStack.getMin());
+
