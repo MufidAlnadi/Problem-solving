@@ -24,7 +24,7 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
-    //q1
+  //q1
   deleteMiddleNode() {
     let length = 0;
     let current = this.head;
@@ -56,7 +56,7 @@ class SinglyLinkedList {
     this.length--;
     return current;
   }
-    //q2
+  //q2
   reverse() {
     let node = this.head;
     this.head = this.tail;
@@ -81,15 +81,8 @@ list.push(2);
 list.push(3);
 list.push(4);
 list.push(5);
-
+console.log(list);
 const middleNode = list.deleteMiddleNode();
-console.log(middleNode.val); 
-
+console.log(middleNode.val);
 list.reverse();
-const array = [];
-let current = list.head;
-while (current !== null) {
-  array.push(current.val);
-  current = current.next;
-}
-console.log(array); 
+console.log(list);
