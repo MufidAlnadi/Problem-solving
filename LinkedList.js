@@ -86,10 +86,5 @@ const middleNode = list.deleteMiddleNode();
 console.log(middleNode.val); 
 
 list.reverse();
-const array = [];
-let current = list.head;
-while (current !== null) {
-  array.push(current.val);
-  current = current.next;
-}
-console.log(array); 
+
+console.log(list); 
